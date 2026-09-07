@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/srtf-favicon.png">
 <title>SRTF — Société Réalisations Travaux et Formations</title>
 <meta name="description" content="SRTF accompagne les entreprises industrielles dans leurs travaux, leur maintenance, leur conformité QHSE, la formation de leurs équipes et la fourniture d'équipements professionnels.">
 <style>
@@ -71,10 +72,9 @@
     transition:background .25s ease, box-shadow .25s ease;
   }
   header.scrolled{background:rgba(10,28,46,0.96); box-shadow:0 2px 20px rgba(0,0,0,.15);}
-  .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:20px 32px;}
-  .logo{display:flex; align-items:center; gap:10px; color:var(--white); font-family:var(--font-head); font-size:22px; font-weight:800;}
-  .logo-mark{width:34px; height:34px; flex-shrink:0;}
-  .logo-sub{display:block; font-family:var(--font-body); font-weight:500; font-size:9.5px; letter-spacing:0.03em; color:#B7C6D6; margin-top:2px;}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; gap:24px; padding:12px 32px;}
+  .logo{display:flex; align-items:center; flex:0 0 auto; padding:5px 8px; background:var(--white); border-radius:3px;}
+  .site-logo{display:block; width:150px; height:auto; max-height:75px; object-fit:contain;}
   nav ul{display:flex; gap:34px;}
   nav a{color:var(--white); font-size:14.5px; font-weight:500; opacity:.88; transition:opacity .15s;}
   nav a:hover{opacity:1;}
@@ -276,6 +276,7 @@
   @media (max-width: 980px){
     nav ul, .nav-cta .btn-outline{display:none;}
     .menu-toggle{display:flex;}
+    .site-logo{width:138px;}
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{aspect-ratio:16/10; margin-top:20px;}
     .head-row{grid-template-columns:1fr; gap:20px;}
@@ -288,6 +289,8 @@
   }
   @media (max-width: 620px){
     .container{padding:0 20px;}
+    .nav-wrap{gap:14px; padding-top:9px; padding-bottom:9px;}
+    .site-logo{width:126px; max-height:63px;}
     .cards-grid{grid-template-columns:1fr;}
     .steps{grid-template-columns:1fr;}
     .row2{grid-template-columns:1fr !important;}
@@ -301,13 +304,14 @@
 <!-- ================= HEADER ================= -->
 <header id="siteHeader">
   <div class="nav-wrap container">
-    <a href="#home" class="logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="4,34 4,14 20,4 20,24" fill="#2E7DE0"/>
-        <polygon points="20,24 20,4 36,14 36,34" fill="#FFFFFF"/>
-        <rect x="4" y="34" width="32" height="3" fill="#7FB3F5"/>
-      </svg>
-      <span>SRTF<span class="logo-sub">RÉALISATIONS · TRAVAUX · FORMATIONS</span></span>
+    <a href="#home" class="logo" aria-label="SRTF - Accueil">
+      <img
+        src="assets/srtf-logo-header.jpeg"
+        alt="SRTF - Société Réalisations Travaux et Formations"
+        class="site-logo"
+        width="640"
+        height="320"
+      >
     </a>
     <nav aria-label="Navigation principale">
       <ul>
@@ -828,7 +832,7 @@
     toggle.setAttribute('aria-expanded', String(!expanded));
     if(!mobileNav){
       mobileNav = document.createElement('div');
-      mobileNav.style.cssText = 'position:fixed;top:78px;left:0;right:0;background:#0A1C2E;padding:22px 32px;z-index:99;display:flex;flex-direction:column;gap:16px;';
+      mobileNav.style.cssText = `position:fixed;top:${header.offsetHeight}px;left:0;right:0;background:#0A1C2E;padding:22px 32px;z-index:99;display:flex;flex-direction:column;gap:16px;`;
       const links = [['#about','Qui sommes-nous'],['#services','Domaines'],['#training','Formation'],['#why','Pourquoi SRTF'],['#contact','Contact']];
       links.forEach(([href,label]) => {
         const a = document.createElement('a');
