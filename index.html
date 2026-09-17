@@ -4,8 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/srtf-favicon.png">
-<title>SRTF — Société Réalisations Travaux et Formations</title>
-<meta name="description" content="SRTF accompagne les entreprises industrielles dans leurs travaux, leur maintenance, leur conformité QHSE, la formation de leurs équipes et la fourniture d'équipements professionnels.">
+<link rel="apple-touch-icon" href="assets/srtf-favicon.png">
+<meta name="theme-color" content="#0A1C2E">
+<title>SRTF — Société Réalisations Travaux et Formations | Mohammédia, Maroc</title>
+<meta name="description" content="SRTF accompagne les entreprises industrielles dans leurs travaux, leur maintenance, leur conformité QHSE, la formation de leurs équipes et la fourniture d'équipements professionnels. Basée à Mohammédia, Maroc.">
+<link rel="canonical" href="https://www.srtf.ma/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SRTF">
+<meta property="og:locale" content="fr_MA">
+<meta property="og:title" content="SRTF — Société Réalisations Travaux et Formations">
+<meta property="og:description" content="Un interlocuteur unique pour vos travaux industriels, votre maintenance, votre conformité QHSE, la formation de vos équipes et la fourniture d'équipements professionnels.">
+<meta property="og:url" content="https://www.srtf.ma/">
+<meta property="og:image" content="https://www.srtf.ma/assets/srtf-logo-full.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SRTF — Société Réalisations Travaux et Formations">
+<meta name="twitter:description" content="Travaux industriels, maintenance, QHSE, formation et équipements — un seul interlocuteur.">
+<meta name="twitter:image" content="https://www.srtf.ma/assets/srtf-logo-full.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SRTF — Société Réalisations Travaux et Formations",
+  "url": "https://www.srtf.ma/",
+  "logo": "https://www.srtf.ma/assets/srtf-logo-full.jpeg",
+  "image": "https://www.srtf.ma/assets/srtf-logo-full.jpeg",
+  "description": "SRTF accompagne les entreprises industrielles dans leurs travaux, leur maintenance, leur conformité QHSE, la formation de leurs équipes et la fourniture d'équipements professionnels.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mohammédia",
+    "addressCountry": "MA"
+  },
+  "taxID": "ICE 003998430000092",
+  "founder": {
+    "@type": "Person",
+    "name": "Wissame Rifak",
+    "jobTitle": "Directeur Général"
+  }
+}
+</script>
+
 <style>
   :root{
     --navy-deep:#0A1C2E;
@@ -20,8 +64,6 @@
     --edge: polygon(0 0, 100% 0, 100% calc(100% - 42px), 0 100%);
   }
 
-  @font-face{font-family:'Archivo';src:local('Arial');}
-
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
@@ -32,6 +74,7 @@
     -webkit-font-smoothing:antialiased;
   }
   img{max-width:100%; display:block;}
+  picture{display:contents;}
   a{color:inherit; text-decoration:none;}
   ul{list-style:none;}
   h1,h2,h3,h4{font-family:var(--font-head); font-weight:800; letter-spacing:-0.01em; color:var(--navy-deep); line-height:1.15;}
@@ -65,6 +108,23 @@
 
   :focus-visible{outline:3px solid var(--blue-electric); outline-offset:2px;}
 
+  .skip-link{
+    position:absolute; top:-100px; left:12px; z-index:1000;
+    background:var(--blue-electric); color:var(--white);
+    padding:12px 18px; font-weight:700; font-size:14px; transition:top .15s ease;
+  }
+  .skip-link:focus{top:12px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *, *::before, *::after{
+      animation-duration:0.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.001ms !important;
+      scroll-behavior:auto !important;
+    }
+  }
+
   /* ---------- HEADER ---------- */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
@@ -81,7 +141,21 @@
   .nav-cta{display:flex; align-items:center; gap:18px;}
   .nav-cta .btn{padding:11px 22px; font-size:14px;}
   .menu-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;}
-  .menu-toggle span{width:26px; height:2px; background:var(--white);}
+  .menu-toggle span{width:26px; height:2px; background:var(--white); transition:transform .2s ease, opacity .2s ease;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-nav{
+    position:fixed; top:0; left:0; right:0; z-index:99;
+    background:#0A1C2E; padding:100px 32px 28px;
+    display:flex; flex-direction:column; gap:4px;
+    transform:translateY(-100%); transition:transform .25s ease;
+    max-height:100vh; overflow-y:auto;
+  }
+  .mobile-nav.show{transform:translateY(0);}
+  .mobile-nav a{color:#fff; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid rgba(255,255,255,.1);}
+  .mobile-nav .btn{margin-top:16px;}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -128,7 +202,7 @@
     display:flex; align-items:flex-end;
     clip-path:polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 92%);
   }
-  .hero-visual > img{
+  .hero-visual img{
     position:absolute; inset:0;
     width:100%; height:100%; object-fit:cover;
   }
@@ -244,7 +318,6 @@
   .contact-list{display:grid; gap:18px; margin-bottom:32px;}
   .contact-list li{display:flex; gap:14px; align-items:flex-start; font-size:14.5px; color:#C7D6E5;}
   .contact-list li svg{width:19px; height:19px; color:var(--blue-electric); flex-shrink:0; margin-top:2px;}
-  .contact-list li .to-complete{color:#7FB3F5; font-style:italic;}
   .social-row{display:flex; gap:12px;}
   .social-row a{
     width:42px; height:42px; border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; transition:background .2s, border-color .2s;
@@ -301,17 +374,22 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
 <!-- ================= HEADER ================= -->
 <header id="siteHeader">
   <div class="nav-wrap container">
     <a href="#home" class="logo" aria-label="SRTF - Accueil">
-      <img
-        src="assets/srtf-logo-header.jpeg"
-        alt="SRTF - Société Réalisations Travaux et Formations"
-        class="site-logo"
-        width="640"
-        height="320"
-      >
+      <picture>
+        <source srcset="assets/srtf-logo-header.webp" type="image/webp">
+        <img
+          src="assets/srtf-logo-header.jpeg"
+          alt="SRTF - Société Réalisations Travaux et Formations"
+          class="site-logo"
+          width="640"
+          height="320"
+        >
+      </picture>
     </a>
     <nav aria-label="Navigation principale">
       <ul>
@@ -324,12 +402,22 @@
     </nav>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-outline">Demander un devis</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile" hidden>
+    <a href="#about">Qui sommes-nous</a>
+    <a href="#services">Domaines</a>
+    <a href="#training">Formation</a>
+    <a href="#why">Pourquoi SRTF</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-primary">Demander un devis</a>
+  </nav>
 </header>
+
+<main id="main-content">
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
@@ -351,7 +439,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="assets/images/industrial-lifting-operation.jpeg" alt="Opération de levage dans un atelier industriel" width="950" height="1280" fetchpriority="high">
+        <picture><source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp"><img src="assets/images/industrial-lifting-operation.jpeg" alt="Opération de levage dans un atelier industriel" width="950" height="1280" fetchpriority="high"></picture>
         <div class="frame-tag">SITE — MOHAMMÉDIA</div>
         <div class="frame-cross fc-tl"></div>
         <div class="frame-cross fc-br"></div>
@@ -369,7 +457,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="photo-block">
-        <img src="assets/images/team-safety-briefing.jpeg" alt="Équipe réunie pour un briefing de sécurité sur site" width="1599" height="722" loading="lazy">
+        <picture><source srcset="assets/images/team-safety-briefing.webp" type="image/webp"><img src="assets/images/team-safety-briefing.jpeg" alt="Équipe réunie pour un briefing de sécurité sur site" width="1599" height="722" loading="lazy"></picture>
       </div>
       <div class="about-copy">
         <div class="kicker">Qui sommes-nous</div>
@@ -462,9 +550,9 @@
         <div class="disclaimer-note">Chaque projet fait l'objet d'une évaluation préalable ; le périmètre exact est défini avec le client selon ses besoins.</div>
       </div>
       <div class="detail-media">
-        <div class="photo-block"><img src="assets/images/industrial-lifting-operation.jpeg" alt="Opération de levage sur un chantier industriel" width="950" height="1280" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/equipment-installation.jpeg" alt="Installation d'un équipement industriel" width="1082" height="720" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/industrial-technician.jpeg" alt="Technicien intervenant sur une installation industrielle" width="1024" height="681" loading="lazy"></div>
+        <div class="photo-block"><picture><source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp"><img src="assets/images/industrial-lifting-operation.jpeg" alt="Opération de levage sur un chantier industriel" width="950" height="1280" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/equipment-installation.webp" type="image/webp"><img src="assets/images/equipment-installation.jpeg" alt="Installation d'un équipement industriel" width="1082" height="720" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/industrial-technician.webp" type="image/webp"><img src="assets/images/industrial-technician.jpeg" alt="Technicien intervenant sur une installation industrielle" width="1024" height="681" loading="lazy"></picture></div>
       </div>
     </div>
   </div>
@@ -475,9 +563,9 @@
   <div class="container">
     <div class="detail reverse">
       <div class="detail-media">
-        <div class="photo-block" style="grid-column:1/-1;"><img src="assets/images/electrical-maintenance.jpeg" alt="Technicien effectuant une maintenance électrique" width="1280" height="960" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/industrial-machinery.jpeg" alt="Machines dans un atelier industriel" width="864" height="1152" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/equipment-installation.jpeg" alt="Diagnostic et réglage d'un équipement industriel" width="1082" height="720" loading="lazy"></div>
+        <div class="photo-block" style="grid-column:1/-1;"><picture><source srcset="assets/images/electrical-maintenance.webp" type="image/webp"><img src="assets/images/electrical-maintenance.jpeg" alt="Technicien effectuant une maintenance électrique" width="1280" height="960" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/industrial-machinery.webp" type="image/webp"><img src="assets/images/industrial-machinery.jpeg" alt="Machines dans un atelier industriel" width="864" height="1152" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/equipment-installation.webp" type="image/webp"><img src="assets/images/equipment-installation.jpeg" alt="Diagnostic et réglage d'un équipement industriel" width="1082" height="720" loading="lazy"></picture></div>
       </div>
       <div class="detail-copy">
         <div class="kicker">Maintenance industrielle</div>
@@ -511,9 +599,9 @@
         <div class="disclaimer-note">Les démarches de certification (ISO ou autres) sont menées selon les besoins et décisions propres à chaque client ; SRTF accompagne le processus sans se substituer aux organismes certificateurs.</div>
       </div>
       <div class="detail-media">
-        <div class="photo-block"><img src="assets/images/technical-training.jpeg" alt="Session de formation technique et QHSE" width="1280" height="960" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/team-safety-briefing.jpeg" alt="Audit et briefing de sécurité sur site industriel" width="1599" height="722" loading="lazy"></div>
-        <div class="photo-block" style="grid-column:1/-1;"><img src="assets/images/first-aid-training.jpeg" alt="Exercice de secourisme avec une équipe équipée d'EPI" width="960" height="1280" loading="lazy"></div>
+        <div class="photo-block"><picture><source srcset="assets/images/technical-training.webp" type="image/webp"><img src="assets/images/technical-training.jpeg" alt="Session de formation technique et QHSE" width="1280" height="960" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/team-safety-briefing.webp" type="image/webp"><img src="assets/images/team-safety-briefing.jpeg" alt="Audit et briefing de sécurité sur site industriel" width="1599" height="722" loading="lazy"></picture></div>
+        <div class="photo-block" style="grid-column:1/-1;"><picture><source srcset="assets/images/first-aid-training.webp" type="image/webp"><img src="assets/images/first-aid-training.jpeg" alt="Exercice de secourisme avec une équipe équipée d'EPI" width="960" height="1280" loading="lazy"></picture></div>
       </div>
     </div>
   </div>
@@ -589,9 +677,9 @@
         </div>
       </div>
       <div class="detail-media">
-        <div class="photo-block" style="grid-column:1/-1;"><img src="assets/images/industrial-machinery.jpeg" alt="Parc de machines et équipements industriels" width="864" height="1152" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/electrical-maintenance.jpeg" alt="Équipements de protection individuelle pour maintenance" width="1280" height="960" loading="lazy"></div>
-        <div class="photo-block"><img src="assets/images/first-aid-training.jpeg" alt="Casques et équipements de sécurité utilisés en formation" width="960" height="1280" loading="lazy"></div>
+        <div class="photo-block" style="grid-column:1/-1;"><picture><source srcset="assets/images/industrial-machinery.webp" type="image/webp"><img src="assets/images/industrial-machinery.jpeg" alt="Parc de machines et équipements industriels" width="864" height="1152" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/electrical-maintenance.webp" type="image/webp"><img src="assets/images/electrical-maintenance.jpeg" alt="Équipements de protection individuelle pour maintenance" width="1280" height="960" loading="lazy"></picture></div>
+        <div class="photo-block"><picture><source srcset="assets/images/first-aid-training.webp" type="image/webp"><img src="assets/images/first-aid-training.jpeg" alt="Casques et équipements de sécurité utilisés en formation" width="960" height="1280" loading="lazy"></picture></div>
       </div>
     </div>
   </div>
@@ -734,27 +822,18 @@
             <span>Mohammédia, Maroc</span>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none"><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="2"/><rect x="3" y="5" width="18" height="14" rx="1" stroke="currentColor" stroke-width="2"/></svg>
-            <span class="to-complete">[À COMPLÉTER — adresse e-mail]</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 5c0-1 1-2 2-2z" stroke="currentColor" stroke-width="2"/></svg>
-            <span class="to-complete">[À COMPLÉTER — téléphone / WhatsApp]</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="2"/><path d="M9 17v-6M9 9v.01M13 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            <span class="to-complete">[À COMPLÉTER — profil LinkedIn]</span>
-          </li>
-          <li>
             <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18" stroke="currentColor" stroke-width="1.6"/></svg>
             <span>srtf.ma</span>
           </li>
         </ul>
-        <div class="social-row">
-          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 5c0-1 1-2 2-2z" stroke="currentColor" stroke-width="2"/></svg></a>
-          <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="2"/><rect x="3" y="5" width="18" height="14" rx="1" stroke="currentColor" stroke-width="2"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="2"/><path d="M9 17v-6M9 9v.01M13 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="2"/></svg></a>
-        </div>
+        <p style="font-size:13.5px; color:#8FB0CE; max-width:340px;">Coordonnées téléphoniques, e-mail et réseaux sociaux en cours de mise à jour — utilisez le formulaire ci-contre, nous revenons vers vous rapidement.</p>
+        <!--
+          À compléter une fois disponibles :
+          - E-mail direct
+          - Téléphone / WhatsApp
+          - LinkedIn
+          Réactiver .social-row et les <li> correspondants dans .contact-list.
+        -->
       </div>
 
       <form class="contact-form" id="contactForm">
@@ -793,12 +872,14 @@
           <label for="f-message">Message</label>
           <textarea id="f-message" name="message" required placeholder="Décrivez votre besoin"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="justify-content:center;">Envoyer la demande</button>
-        <div class="form-note">Ce formulaire est une démonstration : connectez-le à votre messagerie ou à un service d'envoi avant la mise en ligne.</div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center;" id="contactSubmit">Envoyer la demande</button>
+        <div class="form-note" role="status" id="formStatus" aria-live="polite"></div>
       </form>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container footer-row">
@@ -811,7 +892,7 @@
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
-<div class="toast" id="toast">Message enregistré — à connecter à votre messagerie.</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
   // header scroll state
@@ -824,37 +905,71 @@
   });
   backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
-  // mobile menu (simple slide-down)
+  // mobile menu
   const toggle = document.getElementById('menuToggle');
-  let mobileNav = null;
+  const mobileNav = document.getElementById('mobileNav');
+
+  function closeMobileNav(){
+    mobileNav.classList.remove('show');
+    mobileNav.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openMobileNav(){
+    mobileNav.hidden = false;
+    requestAnimationFrame(() => mobileNav.classList.add('show'));
+    toggle.setAttribute('aria-expanded', 'true');
+    mobileNav.querySelector('a').focus();
+  }
   toggle.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    if(!mobileNav){
-      mobileNav = document.createElement('div');
-      mobileNav.style.cssText = `position:fixed;top:${header.offsetHeight}px;left:0;right:0;background:#0A1C2E;padding:22px 32px;z-index:99;display:flex;flex-direction:column;gap:16px;`;
-      const links = [['#about','Qui sommes-nous'],['#services','Domaines'],['#training','Formation'],['#why','Pourquoi SRTF'],['#contact','Contact']];
-      links.forEach(([href,label]) => {
-        const a = document.createElement('a');
-        a.href = href; a.textContent = label;
-        a.style.cssText = 'color:#fff;font-size:16px;font-weight:500;';
-        a.addEventListener('click', () => { mobileNav.remove(); mobileNav=null; toggle.setAttribute('aria-expanded','false'); });
-        mobileNav.appendChild(a);
-      });
-      document.body.appendChild(mobileNav);
-    } else {
-      mobileNav.remove(); mobileNav = null;
+    expanded ? closeMobileNav() : openMobileNav();
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){
+      closeMobileNav();
+      toggle.focus();
     }
   });
 
-  // contact form demo submit
+  // contact form submission
   const form = document.getElementById('contactForm');
   const toast = document.getElementById('toast');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('contactSubmit');
+
+  function showToast(message){
+    toast.textContent = message;
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3500);
-    form.reset();
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    formStatus.textContent = 'Envoi en cours…';
+
+    const payload = Object.fromEntries(new FormData(form).entries());
+
+    try{
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if(res.ok){
+        formStatus.textContent = 'Votre demande a bien été envoyée.';
+        showToast('Message envoyé — l\'équipe SRTF revient vers vous rapidement.');
+        form.reset();
+      } else {
+        formStatus.textContent = 'Envoi indisponible pour le moment. Merci de réessayer plus tard.';
+      }
+    } catch(err){
+      formStatus.textContent = 'Envoi indisponible pour le moment. Merci de réessayer plus tard.';
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
