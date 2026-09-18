@@ -313,7 +313,7 @@
       border-color: rgba(14, 122, 62, 0.2);
     }
 
-    /* Espacements de section optimisés pour un rythme visuel fluide */
+    /* Espacements de section */
     .section-spacing {
       padding-top: 68px;
       padding-bottom: 68px;
@@ -664,12 +664,6 @@
       aspect-ratio: 4 / 5;
       max-height: 480px;
     }
-    .hero-visual-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
     .hero-visual-frame::after {
       content: "";
       position: absolute;
@@ -777,12 +771,7 @@
       overflow: hidden;
       border: 1px solid var(--color-slate-200);
       box-shadow: var(--shadow-md);
-      aspect-ratio: 16 / 10;
-    }
-    .about-photo-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      aspect-ratio: 16 / 9; /* Optimisé pour la photographie de groupe 2.215:1 */
     }
     .about-copy p {
       font-size: 15.5px;
@@ -965,7 +954,6 @@
     .media-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       transition: transform 0.35s ease;
     }
     .media-card:hover img {
@@ -977,6 +965,78 @@
     }
     .media-card.square {
       aspect-ratio: 4 / 3;
+    }
+
+    /* ==========================================================================
+       CADRAGES PHOTOGRAPHIQUES SUR-MESURE (OBJECT-POSITION PAR SUJET)
+       ========================================================================== */
+    .img-hero-lifting {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .img-about-team {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 38% 18%; /* Préserve visages et casques du groupe */
+    }
+    .img-works-installation {
+      object-fit: cover;
+      object-position: 75% 38%; /* Cadre le technicien et le calage machine */
+    }
+    .img-works-technician {
+      object-fit: cover;
+      object-position: 70% 50%; /* Centre le technicien au travail */
+    }
+    .img-works-machinery {
+      object-fit: cover;
+      object-position: center 38%; /* Conserve la tête d'usinage */
+    }
+    .img-maint-electrical {
+      object-fit: cover;
+      object-position: 68% 28%; /* Aligne le technicien et l'armoire ouverte */
+    }
+    .img-qhse-technical {
+      object-fit: cover;
+      object-position: center 72%; /* Élimine le plafond vide, cadre formateur & stagiaires */
+    }
+    .img-qhse-firstaid {
+      object-fit: cover;
+      object-position: center 68%; /* Cadre le mannequin de secourisme et les sauveteurs au sol */
+    }
+    .img-equipment-stock {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    /* Cadrages individuels de la Galerie Réalisations */
+    .img-gallery-lifting {
+      object-fit: cover;
+      object-position: center 38%;
+    }
+    .img-gallery-electrical {
+      object-fit: cover;
+      object-position: 68% 30%;
+    }
+    .img-gallery-installation {
+      object-fit: cover;
+      object-position: 75% 38%;
+    }
+    .img-gallery-briefing {
+      object-fit: cover;
+      object-position: 38% 18%;
+    }
+    .img-gallery-firstaid {
+      object-fit: cover;
+      object-position: center 65%;
+    }
+    .img-gallery-training {
+      object-fit: cover;
+      object-position: center 72%;
     }
 
     /* ==========================================================================
@@ -1122,7 +1182,6 @@
     .gallery-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       transition: transform 0.35s ease, opacity 0.35s ease;
     }
     .gallery-card:hover img {
@@ -1621,7 +1680,28 @@
         font-size: clamp(27px, 6.8vw, 38px);
       }
       .hero-visual-frame {
-        max-height: 230px;
+        max-height: 240px;
+        aspect-ratio: 16 / 10;
+      }
+      .img-hero-lifting {
+        object-position: center 36%;
+      }
+      .about-photo-main {
+        aspect-ratio: 16 / 10;
+      }
+      .img-about-team {
+        object-position: 36% 20%;
+      }
+      .img-maint-electrical {
+        object-position: 68% 30%;
+      }
+      .img-qhse-technical {
+        object-position: center 70%;
+      }
+      .img-qhse-firstaid {
+        object-position: center 65%;
+      }
+      .gallery-card {
         aspect-ratio: 16 / 10;
       }
       .hero-pillars {
@@ -1703,6 +1783,8 @@
             class="brand-logo-img"
             width="640"
             height="320"
+            loading="eager"
+            decoding="async"
           >
         </picture>
       </a>
@@ -1801,9 +1883,12 @@
             <img
               src="assets/images/industrial-lifting-operation.jpeg"
               alt="Opération de levage et d'installation sur site industriel"
+              class="img-hero-lifting"
               width="950"
               height="1280"
+              loading="eager"
               fetchpriority="high"
+              decoding="async"
             >
           </picture>
           <div class="hero-caption-box">
@@ -1872,9 +1957,11 @@
             <img
               src="assets/images/team-safety-briefing.jpeg"
               alt="Équipe technique réunie pour un briefing de sécurité avant intervention"
+              class="img-about-team"
               width="1599"
               height="722"
               loading="lazy"
+              decoding="async"
             >
           </picture>
         </div>
@@ -2047,19 +2134,43 @@
             <div class="media-card span-2">
               <picture>
                 <source srcset="assets/images/equipment-installation.webp" type="image/webp">
-                <img src="assets/images/equipment-installation.jpeg" alt="Installation et réglage d'équipement industriel sur site" width="1082" height="720" loading="lazy">
+                <img
+                  src="assets/images/equipment-installation.jpeg"
+                  alt="Installation et réglage d'équipement industriel sur site"
+                  class="img-works-installation"
+                  width="1082"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                >
               </picture>
             </div>
             <div class="media-card square">
               <picture>
                 <source srcset="assets/images/industrial-technician.webp" type="image/webp">
-                <img src="assets/images/industrial-technician.jpeg" alt="Technicien en cours d'intervention sur site industriel" width="1024" height="681" loading="lazy">
+                <img
+                  src="assets/images/industrial-technician.jpeg"
+                  alt="Technicien en cours d'intervention sur site industriel"
+                  class="img-works-technician"
+                  width="1024"
+                  height="681"
+                  loading="lazy"
+                  decoding="async"
+                >
               </picture>
             </div>
             <div class="media-card square">
               <picture>
                 <source srcset="assets/images/industrial-machinery.webp" type="image/webp">
-                <img src="assets/images/industrial-machinery.jpeg" alt="Parc machines et outillages d'atelier" width="864" height="1152" loading="lazy">
+                <img
+                  src="assets/images/industrial-machinery.jpeg"
+                  alt="Parc machines et outillages d'atelier"
+                  class="img-works-machinery"
+                  width="864"
+                  height="1152"
+                  loading="lazy"
+                  decoding="async"
+                >
               </picture>
             </div>
           </div>
@@ -2100,7 +2211,15 @@
             <div class="media-card span-2">
               <picture>
                 <source srcset="assets/images/electrical-maintenance.webp" type="image/webp">
-                <img src="assets/images/electrical-maintenance.jpeg" alt="Technicien réalisant la maintenance d'une armoire électrique industrielle" width="1280" height="960" loading="lazy">
+                <img
+                  src="assets/images/electrical-maintenance.jpeg"
+                  alt="Technicien réalisant la maintenance d'une armoire électrique industrielle"
+                  class="img-maint-electrical"
+                  width="1280"
+                  height="960"
+                  loading="lazy"
+                  decoding="async"
+                >
               </picture>
             </div>
           </div>
@@ -2164,13 +2283,29 @@
               <div class="media-card span-2">
                 <picture>
                   <source srcset="assets/images/technical-training.webp" type="image/webp">
-                  <img src="assets/images/technical-training.jpeg" alt="Session d'encadrement technique et de formation QHSE" width="1280" height="960" loading="lazy">
+                  <img
+                    src="assets/images/technical-training.jpeg"
+                    alt="Session d'encadrement technique et de formation QHSE"
+                    class="img-qhse-technical"
+                    width="1280"
+                    height="960"
+                    loading="lazy"
+                    decoding="async"
+                  >
                 </picture>
               </div>
               <div class="media-card span-2">
                 <picture>
                   <source srcset="assets/images/first-aid-training.webp" type="image/webp">
-                  <img src="assets/images/first-aid-training.jpeg" alt="Exercice de formation aux gestes de secours et secourisme SST" width="960" height="1280" loading="lazy">
+                  <img
+                    src="assets/images/first-aid-training.jpeg"
+                    alt="Exercice de formation aux gestes de secours et secourisme SST"
+                    class="img-qhse-firstaid"
+                    width="960"
+                    height="1280"
+                    loading="lazy"
+                    decoding="async"
+                  >
                 </picture>
               </div>
             </div>
@@ -2313,7 +2448,15 @@
         <div class="media-card" style="aspect-ratio: 4 / 3;">
           <picture>
             <source srcset="assets/images/industrial-machinery.webp" type="image/webp">
-            <img src="assets/images/industrial-machinery.jpeg" alt="Parc machines et approvisionnement en équipements industriels" width="864" height="1152" loading="lazy">
+            <img
+              src="assets/images/industrial-machinery.jpeg"
+              alt="Parc machines et approvisionnement en équipements industriels"
+              class="img-equipment-stock"
+              width="864"
+              height="1152"
+              loading="lazy"
+              decoding="async"
+            >
           </picture>
         </div>
       </div>
@@ -2336,7 +2479,15 @@
           <div class="gallery-card">
             <picture>
               <source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp">
-              <img src="assets/images/industrial-lifting-operation.jpeg" alt="Levage et manutention sur site industriel" width="950" height="1280" loading="lazy">
+              <img
+                src="assets/images/industrial-lifting-operation.jpeg"
+                alt="Levage et manutention sur site industriel"
+                class="img-gallery-lifting"
+                width="950"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              >
             </picture>
             <div class="gallery-overlay">
               <span class="gallery-tag">Travaux Industriels</span>
@@ -2347,7 +2498,15 @@
           <div class="gallery-card">
             <picture>
               <source srcset="assets/images/electrical-maintenance.webp" type="image/webp">
-              <img src="assets/images/electrical-maintenance.jpeg" alt="Diagnostic et maintenance d'installations électriques" width="1280" height="960" loading="lazy">
+              <img
+                src="assets/images/electrical-maintenance.jpeg"
+                alt="Diagnostic et maintenance d'installations électriques"
+                class="img-gallery-electrical"
+                width="1280"
+                height="960"
+                loading="lazy"
+                decoding="async"
+              >
             </picture>
             <div class="gallery-overlay">
               <span class="gallery-tag">Maintenance</span>
@@ -2358,7 +2517,15 @@
           <div class="gallery-card">
             <picture>
               <source srcset="assets/images/equipment-installation.webp" type="image/webp">
-              <img src="assets/images/equipment-installation.jpeg" alt="Mise en place et alignement d'éléments mécaniques" width="1082" height="720" loading="lazy">
+              <img
+                src="assets/images/equipment-installation.jpeg"
+                alt="Mise en place et alignement d'éléments mécaniques"
+                class="img-gallery-installation"
+                width="1082"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              >
             </picture>
             <div class="gallery-overlay">
               <span class="gallery-tag">Installation</span>
@@ -2369,7 +2536,15 @@
           <div class="gallery-card">
             <picture>
               <source srcset="assets/images/team-safety-briefing.webp" type="image/webp">
-              <img src="assets/images/team-safety-briefing.jpeg" alt="Causerie de sécurité avant prise de poste" width="1599" height="722" loading="lazy">
+              <img
+                src="assets/images/team-safety-briefing.jpeg"
+                alt="Causerie de sécurité avant prise de poste"
+                class="img-gallery-briefing"
+                width="1599"
+                height="722"
+                loading="lazy"
+                decoding="async"
+              >
             </picture>
             <div class="gallery-overlay">
               <span class="gallery-tag">QHSE</span>
@@ -2380,7 +2555,15 @@
           <div class="gallery-card">
             <picture>
               <source srcset="assets/images/first-aid-training.webp" type="image/webp">
-              <img src="assets/images/first-aid-training.jpeg" alt="Entraînement pratique aux gestes de secours SST" width="960" height="1280" loading="lazy">
+              <img
+                src="assets/images/first-aid-training.jpeg"
+                alt="Entraînement pratique aux gestes de secours SST"
+                class="img-gallery-firstaid"
+                width="960"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              >
             </picture>
             <div class="gallery-overlay">
               <span class="gallery-tag">Formation</span>
@@ -2391,7 +2574,15 @@
           <div class="gallery-card">
             <picture>
               <source srcset="assets/images/technical-training.webp" type="image/webp">
-              <img src="assets/images/technical-training.jpeg" alt="Encadrement et formation technique spécialisée" width="1280" height="960" loading="lazy">
+              <img
+                src="assets/images/technical-training.jpeg"
+                alt="Encadrement et formation technique spécialisée"
+                class="img-gallery-training"
+                width="1280"
+                height="960"
+                loading="lazy"
+                decoding="async"
+              >
             </picture>
             <div class="gallery-overlay">
               <span class="gallery-tag">Formation</span>
@@ -2698,6 +2889,8 @@
               class="footer-brand-logo"
               width="640"
               height="320"
+              loading="lazy"
+              decoding="async"
             >
           </picture>
           <p class="footer-brand-desc">
