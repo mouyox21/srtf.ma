@@ -1,67 +1,165 @@
-# Site SRTF
+# 🏗️ SRTF — Site Vitrine & Plateforme de Contact
 
-Site vitrine statique de la Société Réalisations Travaux et Formations.
+> **Société Réalisations Travaux et Formations (SRTF)**  
+> Site web institutionnel statique et hautement performant pour l'entreprise SRTF, basée à Mohammédia, Maroc.
 
-## Structure
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Resend](https://img.shields.io/badge/Resend-000000?style=for-the-badge&logo=resend&logoColor=white)
 
-- `index.html` : page principale, styles et interactions
-- `assets/images/` : photographies du site (JPEG + WebP)
-- `api/contact.js` : fonction serverless Vercel qui relaie le formulaire de contact par e-mail (Resend)
-- `robots.txt`, `sitemap.xml` : SEO technique
-- `vercel.json` : configuration de déploiement et en-têtes HTTP (sécurité, cache)
-- `.env.example` : variables d'environnement nécessaires au formulaire de contact
+---
 
-## Tester localement
+## 📑 Sommaire
 
-Le site étant statique, un simple serveur suffit pour l'aperçu visuel :
+- [À propos du projet](#-à-propos-du-projet)
+- [Fonctionnalités principales](#-fonctionnalités-principales)
+- [Structure du projet](#-structure-du-projet)
+- [Prérequis & Installation locale](#-prérequis--installation-locale)
+- [Variables d'environnement](#-variables-denvironnement)
+- [Déploiement sur Vercel](#-déploiement-sur-vercel)
+- [Sécurité & Performance](#-sécurité--performance)
+- [Contact & Support](#-contact--support)
 
-```powershell
+---
+
+## ℹ️ À propos du projet
+
+Ce dépôt contient le code source du site officiel de **SRTF (Société Réalisations Travaux et Formations)**.  
+SRTF accompagne les entreprises industrielles à Mohammédia et au Maroc dans :
+- **Travaux industriels & Maintenance**
+- **Conformité & Conseil QHSE**
+- **Formations professionnelles certifiantes**
+- **Fourniture d'équipements & Matériaux de protection**
+
+Le site a été conçu pour offrir des temps de chargement ultra-rapides, une sécurité renforcée et un référencement naturel (SEO) optimal sans la lourdeur d'un CMS traditionnel.
+
+---
+
+## ✨ Fonctionnalités principales
+
+- 📱 **Interface responsive & Moderne** : Design soigné avec la typographie Oswald, IBM Plex Mono & Inter.
+- ⚡ **Performances maximales** : Assets optimisés (WebP + JPEG fallback, mise en cache immutable).
+- ✉️ **Formulaire de Contact Serverless** : Traitement sécurisé des messages via une fonction Serverless Vercel (`/api/contact`) intégrée avec l'API [Resend](https://resend.com).
+- 🔍 **SEO Avancé & Données Structurées** : Graph JSON-LD (`LocalBusiness`), cartes OpenGraph, Twitter Cards, `sitemap.xml` et `robots.txt`.
+- 🛡️ **Sécurité renforcée** : En-têtes HTTP de sécurité (CSP strict, HSTS, X-Frame-Options, Referrer-Policy, etc.) configurés dans `vercel.json`.
+
+---
+
+## 📁 Structure du projet
+
+```text
+srtf/
+├── api/
+│   └── contact.js          # Fonction Serverless Vercel pour l'envoi d'e-mails (Resend)
+├── assets/
+│   ├── images/             # Photographies d'illustrations (WebP + JPEG)
+│   ├── srtf-favicon.png    # Favicon du site
+│   ├── srtf-logo-full.jpeg # Logo complet (OpenGraph & Schema.org)
+│   └── srtf-logo-header.*  # Logo d'en-tête (WebP & JPEG)
+├── index.html              # Page unique (HTML, styles CSS embarqués & interactions JS)
+├── robots.txt              # Directives d'indexation pour les moteurs de recherche
+├── sitemap.xml             # Carte du site pour le référencement naturel
+├── vercel.json             # Configuration Vercel (URLs propres, headers HTTP & cache)
+└── .env.example            # Modèle de configuration des variables d'environnement
+```
+
+---
+
+## 🚀 Prérequis & Installation locale
+
+### Prérequis
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure recommandée)
+- Un compte [Vercel](https://vercel.com) (optionnel, pour tester l'API localement)
+
+### 1. Cloner le dépôt
+```bash
+git clone https://github.com/votre-compte/srtf.git
+cd srtf
+```
+
+### 2. Tester l'interface (Site statique)
+Pour prévisualiser le site visuellement sans la fonction de contact :
+```bash
 npx serve .
 ```
+Le site sera accessible sur `http://localhost:3000`.
 
-Pour tester également le formulaire de contact (fonction serverless `/api/contact`), utiliser la CLI Vercel :
-
-```powershell
+### 3. Tester avec la fonction Serverless (Formulaire de contact)
+Pour tester l'envoi réel de mails via l'API `/api/contact` :
+```bash
 npx vercel dev
 ```
+Cela lancera l'environnement de développement Vercel intégrant l'exécution des fonctions serverless Node.js localement.
 
-Le site peut aussi être ouvert directement avec `index.html`, mais le formulaire de contact ne fonctionnera pas sans serveur (route `/api/contact` indisponible).
+---
 
-## Variables d'environnement
+## 🔑 Variables d'environnement
 
-Copier `.env.example` vers `.env.local` puis renseigner :
+Pour exécuter le formulaire de contact, créez un fichier `.env.local` à la racine du projet en vous basant sur `.env.example` :
 
-| Variable | Description |
-| --- | --- |
-| `RESEND_API_KEY` | Clé API [Resend](https://resend.com) utilisée par `/api/contact` pour envoyer les messages par e-mail. |
-| `CONTACT_TO_EMAIL` | Adresse e-mail qui reçoit les demandes du formulaire. |
-| `CONTACT_FROM_EMAIL` | (optionnel) Adresse/expéditeur affiché, doit être un domaine vérifié dans Resend. |
+```bash
+cp .env.example .env.local
+```
 
-Sans ces variables, `/api/contact` répond `503` et le site affiche un message d'indisponibilité — aucune information n'est perdue mais l'e-mail n'est pas envoyé.
+Remplissez les variables suivantes :
 
-À configurer dans **Vercel → Project → Settings → Environment Variables** pour les environnements Production et Preview.
+| Variable | Obligatoire | Description |
+| :--- | :---: | :--- |
+| `RESEND_API_KEY` | **Oui** | Clé d'API obtenue sur [Resend.com](https://resend.com) |
+| `CONTACT_TO_EMAIL` | **Oui** | Adresse e-mail destinataire qui recevra les messages des clients |
+| `CONTACT_FROM_EMAIL` | Non | Expéditeur du mail (ex: `onboarding@resend.dev` ou domaine vérifié) |
 
-## Déployer sur Vercel
+> ⚠️ **Note** : Sans ces variables, la route `/api/contact` renverra un code HTTP `503 Service Unavailable`.
 
-### Depuis Git
+---
 
-1. Publier ce dossier dans un dépôt GitHub, GitLab ou Bitbucket.
-2. Importer le dépôt dans Vercel.
-3. Conserver le preset **Other** et le dossier racine `.`.
-4. Laisser les commandes de build et le dossier de sortie vides (site statique, `api/contact.js` est détecté automatiquement comme fonction serverless).
-5. Renseigner les variables d'environnement ci-dessus.
-6. Lancer le déploiement.
+## 🌐 Déploiement sur Vercel
 
-### Depuis la ligne de commande
+### Option 1 : Déploiement via Git (Recommandé)
 
-```powershell
+1. Poussez le code sur votre dépôt Git (GitHub, GitLab, ou Bitbucket).
+2. Connectez le dépôt à votre tableau de bord **Vercel**.
+3. Dans **Project Settings > Environment Variables**, ajoutez :
+   - `RESEND_API_KEY`
+   - `CONTACT_TO_EMAIL`
+   - `CONTACT_FROM_EMAIL` (si applicable)
+4. Conserver le Preset **Other** et laissez la commande de build vide. Vercel détectera automatiquement la fonction `/api/contact.js`.
+5. Validez le déploiement.
+
+### Option 2 : Déploiement en ligne de commande (Vercel CLI)
+
+Déploiement en environnement de Preview :
+```bash
 npx vercel
 ```
 
-Pour publier ensuite en production :
-
-```powershell
+Déploiement direct en Production :
+```bash
 npx vercel --prod
 ```
 
-Avant la mise en production définitive, compléter les coordonnées de contact directes (e-mail, téléphone, LinkedIn) dans la section Contact de `index.html`, actuellement en attente (voir commentaire dans le code).
+---
+
+## 🛡️ Sécurité & Performance
+
+Les en-têtes HTTP de sécurité et de mise en cache suivants sont configurés dans `vercel.json` :
+
+- **Content-Security-Policy (CSP)** : Restriction stricte des sources de scripts et de contenus autorisés.
+- **Strict-Transport-Security (HSTS)** : Injonction HTTPS sur 2 ans avec sous-domaines et préchargement.
+- **X-Frame-Options** : `DENY` pour prévenir les attaques par Clickjacking.
+- **X-Content-Type-Options** : `nosniff` pour éviter la mauvaise interprétation du MIME-type.
+- **Cache-Control** : Gestion fine avec `public, max-age=31536000, immutable` pour les ressources statiques (`/assets/`).
+
+---
+
+## 📞 Contact & Support
+
+**Société Réalisations Travaux et Formations (SRTF)**  
+📍 Mohammédia, Maroc  
+🌐 Site Web : [www.srtf.ma](https://www.srtf.ma/)  
+👤 Directeur Général : Wissame Rifak  
+
+---
+*Développé avec soin pour SRTF.*
