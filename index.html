@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/srtf-favicon.png">
 <link rel="apple-touch-icon" href="assets/srtf-favicon.png">
-<meta name="theme-color" content="#1B1B18">
+<meta name="theme-color" content="#002858">
 <title>SRTF — Société Réalisations Travaux et Formations | Mohammédia, Maroc</title>
 <meta name="description" content="SRTF accompagne les entreprises industrielles dans leurs travaux, leur maintenance, leur conformité QHSE, la formation de leurs équipes et la fourniture d'équipements professionnels. Basée à Mohammédia, Maroc.">
 <link rel="canonical" href="https://www.srtf.ma/">
@@ -52,12 +52,12 @@
 
 <style>
   :root{
-    --navy-deep:#1B1B18;
-    --navy-steel:#33302A;
-    --blue-electric:#E1590A;
-    --anthracite:#211F1C;
-    --grey-line:#E3DED4;
-    --grey-panel:#F7F4EF;
+    --navy-deep:#002858;
+    --navy-steel:#0F3D73;
+    --blue-electric:#0E7A3E;
+    --anthracite:#22262B;
+    --grey-line:#DCE2E8;
+    --grey-panel:#F3F6F8;
     --white:#FFFFFF;
     --font-head:'Oswald', 'Arial Narrow', sans-serif;
     --font-body:'Inter', -apple-system, sans-serif;
@@ -103,7 +103,7 @@
     transition:background .2s ease, color .2s ease, border-color .2s ease;
   }
   .btn-primary{background:var(--blue-electric); color:var(--white);}
-  .btn-primary:hover{background:#B8460A;}
+  .btn-primary:hover{background:#0A5C2F;}
   .btn-outline{border-color:rgba(255,255,255,.5); color:var(--white);}
   .btn-outline:hover{border-color:var(--white); background:rgba(255,255,255,.08);}
   .btn-dark-outline{border-color:var(--navy-deep); color:var(--navy-deep);}
@@ -132,10 +132,10 @@
   /* ---------- HEADER ---------- */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(27,27,24,0.0);
+    background:rgba(0,40,88,0.0);
     transition:background .25s ease, box-shadow .25s ease;
   }
-  header.scrolled{background:rgba(27,27,24,0.96); box-shadow:0 2px 20px rgba(0,0,0,.15);}
+  header.scrolled{background:rgba(0,40,88,0.96); box-shadow:0 2px 20px rgba(0,0,0,.15);}
   .nav-wrap{display:flex; align-items:center; justify-content:space-between; gap:24px; padding:12px 32px;}
   .logo{display:flex; align-items:center; flex:0 0 auto; padding:5px 8px; background:var(--white);}
   .site-logo{display:block; width:150px; height:auto; max-height:75px; object-fit:contain;}
@@ -152,7 +152,7 @@
 
   .mobile-nav{
     position:fixed; top:0; left:0; right:0; z-index:99;
-    background:#1B1B18; padding:100px 32px 28px;
+    background:#002858; padding:100px 32px 28px;
     display:flex; flex-direction:column; gap:4px;
     transform:translateY(-100%); transition:transform .25s ease;
     max-height:100vh; overflow-y:auto;
@@ -165,7 +165,7 @@
   .hero{
     min-height:100vh;
     display:flex; align-items:center;
-    background:linear-gradient(120deg, var(--navy-deep) 0%, var(--navy-steel) 62%, #3D362B 100%);
+    background:linear-gradient(120deg, var(--navy-deep) 0%, var(--navy-steel) 62%, #12406E 100%);
     color:var(--white);
     position:relative;
     overflow:hidden;
@@ -183,25 +183,25 @@
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;
     position:relative; z-index:2; width:100%;
   }
-  .hero-eyebrow{font-size:13px; font-weight:700; letter-spacing:.14em; color:#F2A65C; margin-bottom:22px; display:flex; align-items:center; gap:10px;}
-  .hero-eyebrow .tick{width:26px; height:1px; background:#F2A65C;}
+  .hero-eyebrow{font-size:13px; font-weight:700; letter-spacing:.14em; color:#5FD08A; margin-bottom:22px; display:flex; align-items:center; gap:10px;}
+  .hero-eyebrow .tick{width:26px; height:1px; background:#5FD08A;}
   .hero h1{
     font-size:clamp(40px, 5.2vw, 68px);
     color:var(--white);
     margin-bottom:10px;
   }
-  .hero .hero-sigle{color:#F2A65C;}
-  .hero-full-name{font-size:15px; font-weight:600; letter-spacing:.06em; color:#D6CFC2; margin-bottom:28px; text-transform:uppercase;}
-  .hero p.lede{font-size:19px; color:#E8E2D6; max-width:520px; margin-bottom:38px; font-weight:400;}
+  .hero .hero-sigle{color:#5FD08A;}
+  .hero-full-name{font-size:15px; font-weight:600; letter-spacing:.06em; color:#C7D2DC; margin-bottom:28px; text-transform:uppercase;}
+  .hero p.lede{font-size:19px; color:#DCE4EC; max-width:520px; margin-bottom:38px; font-weight:400;}
   .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px;}
   .hero-stats{display:flex; gap:0; border-top:1px solid rgba(255,255,255,.18); padding-top:26px; max-width:560px;}
   .hero-stats div{flex:1; padding-right:20px;}
   .hero-stats strong{display:block; font-family:var(--font-head); font-size:26px; color:var(--white);}
-  .hero-stats span{font-size:13px; color:#BDB5A6;}
+  .hero-stats span{font-size:13px; color:#A9B7C4;}
   .hero-visual{
     position:relative;
     aspect-ratio:4/5;
-    background:linear-gradient(155deg,#2E2A22,#1C1812);
+    background:linear-gradient(155deg,#0C3560,#041A38);
     border:1px solid rgba(255,255,255,.14);
     display:flex; align-items:flex-end;
     clip-path:var(--chamfer-lg);
@@ -212,18 +212,18 @@
   }
   .hero-visual::after{
     content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg,rgba(27,27,24,.08) 48%,rgba(27,27,24,.88) 100%);
+    background:linear-gradient(180deg,rgba(0,40,88,.08) 48%,rgba(0,40,88,.88) 100%);
     pointer-events:none;
   }
   .hero-visual .frame-tag{
-    position:absolute; z-index:2; top:22px; left:22px; font-size:11px; color:#F0E9DD; letter-spacing:.06em; border:1px solid rgba(255,255,255,.4); padding:6px 10px;
+    position:absolute; z-index:2; top:22px; left:22px; font-size:11px; color:#E3EAF0; letter-spacing:.06em; border:1px solid rgba(255,255,255,.4); padding:6px 10px;
   }
   .hero-visual .frame-cross{position:absolute; z-index:2; width:16px; height:16px;}
   .hero-visual .frame-cross::before,.hero-visual .frame-cross::after{content:""; position:absolute; background:rgba(255,255,255,.5);}
   .hero-visual .frame-cross::before{width:100%; height:1px; top:50%;}
   .hero-visual .frame-cross::after{height:100%; width:1px; left:50%;}
   .fc-tl{top:16px; left:16px;} .fc-br{bottom:16px; right:16px;}
-  .hero-visual .caption{position:relative; z-index:2; padding:26px; font-size:13px; color:#C9C0AE; border-top:1px solid rgba(255,255,255,.14); width:100%;}
+  .hero-visual .caption{position:relative; z-index:2; padding:26px; font-size:13px; color:#BCC7D1; border-top:1px solid rgba(255,255,255,.14); width:100%;}
   .hero-visual .caption strong{display:block; color:var(--white); font-family:var(--font-head); font-size:15px; margin-bottom:4px;}
 
   /* ---------- generic section spacing ---------- */
@@ -234,15 +234,15 @@
   .section-dark h2, .section-dark h3{color:var(--white);}
   .head-row{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:56px;}
   .head-row h2{font-size:clamp(28px,3.4vw,40px);}
-  .head-row p{font-size:16px; color:#6B655C; max-width:440px;}
-  .section-dark .head-row p{color:#C9C3B8;}
+  .head-row p{font-size:16px; color:#5B6169; max-width:440px;}
+  .section-dark .head-row p{color:#B9C3CE;}
 
   /* ---------- QUI SOMMES NOUS ---------- */
   .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:center;}
   .photo-block{
     position:relative;
     aspect-ratio:5/4;
-    background:linear-gradient(135deg,#E8E3DA,#D2CABA);
+    background:linear-gradient(135deg,#E4E8EC,#C9D1D9);
     border:1px solid var(--grey-line);
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
@@ -254,11 +254,11 @@
     transition:transform .35s ease;
   }
   .photo-block:hover img{transform:scale(1.025);}
-  .about-copy p{font-size:16px; color:#57514A; margin-bottom:18px; max-width:520px;}
+  .about-copy p{font-size:16px; color:#454B52; margin-bottom:18px; max-width:520px;}
   .about-facts{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px; max-width:520px;}
   .fact{border-top:3px solid var(--blue-electric); padding-top:12px;}
   .fact strong{display:block; font-family:var(--font-head); font-size:14.5px; color:var(--navy-deep); margin-bottom:4px;}
-  .fact span{font-size:13px; color:#6E6858;}
+  .fact span{font-size:13px; color:#5B6169;}
 
   /* ---------- SERVICE CARDS ---------- */
   .cards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--grey-line); border:1px solid var(--grey-line);}
@@ -269,11 +269,11 @@
     clip-path:var(--chamfer-sm);
     transition:border-color .2s ease, box-shadow .2s ease;
   }
-  .card:hover{box-shadow:6px 6px 0 rgba(27,27,24,.08);}
+  .card:hover{box-shadow:6px 6px 0 rgba(0,40,88,.08);}
   .card:hover{border-top-color:var(--blue-electric);}
   .card .icon{width:40px; height:40px; margin-bottom:22px; color:var(--navy-deep);}
   .card h3{font-size:19px; margin-bottom:12px;}
-  .card p{font-size:14.5px; color:#6B655C; margin-bottom:24px; flex-grow:1;}
+  .card p{font-size:14.5px; color:#5B6169; margin-bottom:24px; flex-grow:1;}
   .card a.more{font-size:13.5px; font-weight:700; color:var(--blue-electric); display:inline-flex; align-items:center; gap:6px;}
   .card a.more svg{width:14px; height:14px;}
 
@@ -283,13 +283,13 @@
   .detail.reverse .detail-media{order:1;}
   .detail-copy ul.points{margin-top:22px; display:grid; gap:12px;}
   .detail-copy ul.points li{
-    display:flex; gap:12px; align-items:flex-start; font-size:15px; color:#4A443D;
+    display:flex; gap:12px; align-items:flex-start; font-size:15px; color:#3C4148;
   }
   .detail-copy ul.points li svg{width:18px; height:18px; flex-shrink:0; margin-top:2px; color:var(--blue-electric);}
   .detail-media{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
   .detail-media .photo-block:first-child{grid-column:1 / -1; aspect-ratio:16/9;}
   .disclaimer-note{
-    margin-top:22px; font-size:12.5px; color:#8B8478; border-left:2px solid var(--grey-line); padding-left:12px;
+    margin-top:22px; font-size:12.5px; color:#6B7280; border-left:2px solid var(--grey-line); padding-left:12px;
   }
 
   /* ---------- APPROACH (5 steps) ---------- */
@@ -301,14 +301,14 @@
     display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:500; font-size:17px; margin-bottom:22px;
   }
   .step h4{font-size:16px; margin-bottom:8px;}
-  .step p{font-size:13.5px; color:#6E6858;}
+  .step p{font-size:13.5px; color:#5B6169;}
 
   /* ---------- VALEURS ---------- */
   .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.12); margin-top:10px;}
   .value{background:var(--navy-deep); padding:34px 30px; clip-path:var(--chamfer-sm);}
-  .value .icon{width:30px; height:30px; color:#F2A65C; margin-bottom:16px;}
+  .value .icon{width:30px; height:30px; color:#5FD08A; margin-bottom:16px;}
   .value h4{color:var(--white); font-size:17px; margin-bottom:8px;}
-  .value p{color:#BDB5A6; font-size:13.5px;}
+  .value p{color:#A9B7C4; font-size:13.5px;}
 
   /* ---------- POURQUOI ---------- */
   .why-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
@@ -316,14 +316,14 @@
   .why-item{display:flex; gap:18px;}
   .why-item .num{font-family:var(--font-head); font-size:22px; color:var(--grey-line); min-width:38px;}
   .why-item h4{font-size:16.5px; margin-bottom:6px;}
-  .why-item p{font-size:14px; color:#6B655C;}
+  .why-item p{font-size:14px; color:#5B6169;}
 
   /* ---------- CONTACT ---------- */
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
   .contact-info h3{font-size:15px; color:var(--white); font-weight:700; margin-bottom:4px;}
-  .contact-info .role{color:#B3A791; font-size:13.5px; margin-bottom:26px;}
+  .contact-info .role{color:#9FB0C2; font-size:13.5px; margin-bottom:26px;}
   .contact-list{display:grid; gap:18px; margin-bottom:32px;}
-  .contact-list li{display:flex; gap:14px; align-items:flex-start; font-size:14.5px; color:#D6CFC2;}
+  .contact-list li{display:flex; gap:14px; align-items:flex-start; font-size:14.5px; color:#C7D2DC;}
   .contact-list li svg{width:19px; height:19px; color:var(--blue-electric); flex-shrink:0; margin-top:2px;}
   .social-row{display:flex; gap:12px;}
   .social-row a{
@@ -339,11 +339,11 @@
   }
   form.contact-form textarea{min-height:100px; resize:vertical;}
   form.contact-form .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  .form-note{font-size:12px; color:#8B8478; margin-top:2px;}
+  .form-note{font-size:12px; color:#6B7280; margin-top:2px;}
 
-  footer{background:#121110; color:#8C8577; padding:34px 0; font-size:13px;}
+  footer{background:#051225; color:#7C8591; padding:34px 0; font-size:13px;}
   .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
-  .footer-row .fine{color:#6E6858;}
+  .footer-row .fine{color:#5B6169;}
 
   .back-top{position:fixed; bottom:26px; right:26px; width:46px; height:46px; background:var(--navy-deep); display:flex; align-items:center; justify-content:center; clip-path:var(--chamfer-sm); opacity:0; pointer-events:none; transition:opacity .2s; z-index:90;}
   .back-top.show{opacity:1; pointer-events:auto;}
@@ -626,41 +626,41 @@
     </div>
 
     <div class="cards-grid" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.12);">
-      <div class="card" style="background:#262019; border-top-color:#F2A65C;">
-        <svg class="icon" style="color:#F2A65C;" viewBox="0 0 40 40" fill="none"><path d="M20 5c5 3 9 4 13 4v10c0 8-5 13-13 16-8-3-13-8-13-16V9c4 0 8-1 13-4z" stroke="currentColor" stroke-width="2"/></svg>
+      <div class="card" style="background:#0D2C50; border-top-color:#5FD08A;">
+        <svg class="icon" style="color:#5FD08A;" viewBox="0 0 40 40" fill="none"><path d="M20 5c5 3 9 4 13 4v10c0 8-5 13-13 16-8-3-13-8-13-16V9c4 0 8-1 13-4z" stroke="currentColor" stroke-width="2"/></svg>
         <h3 style="color:#fff;">SST &amp; secourisme</h3>
-        <p style="color:#C9C3B8;">Sauveteur secouriste du travail, gestes et postures, premiers secours en milieu industriel.</p>
+        <p style="color:#B9C3CE;">Sauveteur secouriste du travail, gestes et postures, premiers secours en milieu industriel.</p>
       </div>
-      <div class="card" style="background:#262019; border-top-color:#F2A65C;">
-        <svg class="icon" style="color:#F2A65C;" viewBox="0 0 40 40" fill="none"><path d="M8 34l8-24h8l8 24M13 26h14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="card" style="background:#0D2C50; border-top-color:#5FD08A;">
+        <svg class="icon" style="color:#5FD08A;" viewBox="0 0 40 40" fill="none"><path d="M8 34l8-24h8l8 24M13 26h14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         <h3 style="color:#fff;">Travail en hauteur</h3>
-        <p style="color:#C9C3B8;">Bonnes pratiques, équipements de protection et prévention des chutes.</p>
+        <p style="color:#B9C3CE;">Bonnes pratiques, équipements de protection et prévention des chutes.</p>
       </div>
-      <div class="card" style="background:#262019; border-top-color:#F2A65C;">
-        <svg class="icon" style="color:#F2A65C;" viewBox="0 0 40 40" fill="none"><rect x="10" y="10" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 18h12M14 24h8" stroke="currentColor" stroke-width="2"/></svg>
+      <div class="card" style="background:#0D2C50; border-top-color:#5FD08A;">
+        <svg class="icon" style="color:#5FD08A;" viewBox="0 0 40 40" fill="none"><rect x="10" y="10" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 18h12M14 24h8" stroke="currentColor" stroke-width="2"/></svg>
         <h3 style="color:#fff;">Espace confiné</h3>
-        <p style="color:#C9C3B8;">Procédures d'accès, ventilation, détection des risques et intervention encadrée.</p>
+        <p style="color:#B9C3CE;">Procédures d'accès, ventilation, détection des risques et intervention encadrée.</p>
       </div>
-      <div class="card" style="background:#262019; border-top-color:#F2A65C;">
-        <svg class="icon" style="color:#F2A65C;" viewBox="0 0 40 40" fill="none"><path d="M20 6l3 8h9l-7 6 3 9-8-6-8 6 3-9-7-6h9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <div class="card" style="background:#0D2C50; border-top-color:#5FD08A;">
+        <svg class="icon" style="color:#5FD08A;" viewBox="0 0 40 40" fill="none"><path d="M20 6l3 8h9l-7 6 3 9-8-6-8 6 3-9-7-6h9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
         <h3 style="color:#fff;">Risque électrique &amp; incendie</h3>
-        <p style="color:#C9C3B8;">Habilitation électrique, prévention et réaction face aux départs de feu.</p>
+        <p style="color:#B9C3CE;">Habilitation électrique, prévention et réaction face aux départs de feu.</p>
       </div>
-      <div class="card" style="background:#262019; border-top-color:#F2A65C;">
-        <svg class="icon" style="color:#F2A65C;" viewBox="0 0 40 40" fill="none"><rect x="6" y="16" width="20" height="12" rx="1" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="30" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="30" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M26 20h5l3 5v3h-8" stroke="currentColor" stroke-width="2"/></svg>
+      <div class="card" style="background:#0D2C50; border-top-color:#5FD08A;">
+        <svg class="icon" style="color:#5FD08A;" viewBox="0 0 40 40" fill="none"><rect x="6" y="16" width="20" height="12" rx="1" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="30" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="30" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M26 20h5l3 5v3h-8" stroke="currentColor" stroke-width="2"/></svg>
         <h3 style="color:#fff;">Conduite défensive &amp; engins</h3>
-        <p style="color:#C9C3B8;">Sécurité routière professionnelle et bonnes pratiques de conduite d'engins.</p>
+        <p style="color:#B9C3CE;">Sécurité routière professionnelle et bonnes pratiques de conduite d'engins.</p>
       </div>
-      <div class="card" style="background:#262019; border-top-color:#F2A65C;">
-        <svg class="icon" style="color:#F2A65C;" viewBox="0 0 40 40" fill="none"><path d="M14 6h12l2 8-2 6 2 6-2 8H14l-2-8 2-6-2-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="card" style="background:#0D2C50; border-top-color:#5FD08A;">
+        <svg class="icon" style="color:#5FD08A;" viewBox="0 0 40 40" fill="none"><path d="M14 6h12l2 8-2 6 2 6-2 8H14l-2-8 2-6-2-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         <h3 style="color:#fff;">Produits chimiques &amp; HSE</h3>
-        <p style="color:#C9C3B8;">Manipulation sécurisée, étiquetage, fiches de données de sécurité et sensibilisation HSE.</p>
+        <p style="color:#B9C3CE;">Manipulation sécurisée, étiquetage, fiches de données de sécurité et sensibilisation HSE.</p>
       </div>
     </div>
 
     <div style="margin-top:44px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
       <a href="#contact" class="btn btn-primary">Demander un programme de formation</a>
-      <span style="font-size:13.5px; color:#B3A791;">Programme et durée adaptés au nombre de participants et au site.</span>
+      <span style="font-size:13.5px; color:#9FB0C2;">Programme et durée adaptés au nombre de participants et au site.</span>
     </div>
   </div>
 </section>
@@ -784,7 +784,7 @@
       <div>
         <div class="kicker">Pourquoi SRTF</div>
         <h2>Un partenaire, plusieurs besoins couverts</h2>
-        <p style="color:#6B655C; font-size:15.5px; margin-top:18px; max-width:460px;">Plutôt que de multiplier les prestataires, les entreprises industrielles gagnent à travailler avec un partenaire capable de couvrir les travaux, la maintenance, la conformité et la formation avec une même logique d'exigence.</p>
+        <p style="color:#5B6169; font-size:15.5px; margin-top:18px; max-width:460px;">Plutôt que de multiplier les prestataires, les entreprises industrielles gagnent à travailler avec un partenaire capable de couvrir les travaux, la maintenance, la conformité et la formation avec une même logique d'exigence.</p>
       </div>
       <div class="why-list">
         <div class="why-item">
@@ -833,7 +833,7 @@
             <span>srtf.ma</span>
           </li>
         </ul>
-        <p style="font-size:13.5px; color:#B3A791; max-width:340px;">Coordonnées téléphoniques, e-mail et réseaux sociaux en cours de mise à jour — utilisez le formulaire ci-contre, nous revenons vers vous rapidement.</p>
+        <p style="font-size:13.5px; color:#9FB0C2; max-width:340px;">Coordonnées téléphoniques, e-mail et réseaux sociaux en cours de mise à jour — utilisez le formulaire ci-contre, nous revenons vers vous rapidement.</p>
         <!--
           À compléter une fois disponibles :
           - E-mail direct
