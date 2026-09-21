@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.CONTACT_TO_EMAIL;
-  const fromEmail = process.env.CONTACT_FROM_EMAIL || 'SRTF Site <onboarding@resend.dev>';
+  const fromEmail = process.env.CONTACT_FROM_EMAIL || 'SRTF <contact@srtf.ma>';
 
   if (!apiKey || !toEmail) {
     console.error('Contact form: RESEND_API_KEY or CONTACT_TO_EMAIL is not configured.');
