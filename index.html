@@ -664,6 +664,18 @@
       aspect-ratio: 4 / 5;
       max-height: 480px;
     }
+    .hero-visual-frame picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-visual-frame picture img,
+    .hero-visual-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .hero-visual-frame::after {
       content: "";
       position: absolute;
@@ -772,6 +784,19 @@
       border: 1px solid var(--color-slate-200);
       box-shadow: var(--shadow-md);
       aspect-ratio: 16 / 9; /* Optimisé pour la photographie de groupe 2.215:1 */
+      position: relative;
+    }
+    .about-photo-main picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .about-photo-main picture img,
+    .about-photo-main img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .about-copy p {
       font-size: 15.5px;
@@ -951,9 +976,17 @@
       box-shadow: var(--shadow-sm);
       position: relative;
     }
-    .media-card img {
+    .media-card picture {
+      display: block;
       width: 100%;
       height: 100%;
+    }
+    .media-card picture img,
+    .media-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.35s ease;
     }
     .media-card:hover img {
@@ -1000,11 +1033,11 @@
     }
     .img-qhse-technical {
       object-fit: cover;
-      object-position: center 72%; /* Élimine le plafond vide, cadre formateur & stagiaires */
+      object-position: center 75%; /* Élimine le plafond vide, cadre formateur, écran SRTF & stagiaires */
     }
     .img-qhse-firstaid {
       object-fit: cover;
-      object-position: center 68%; /* Cadre le mannequin de secourisme et les sauveteurs au sol */
+      object-position: center 48%; /* Cadre les sauveteurs, casques et gestes de secours sans couper les têtes */
     }
     .img-equipment-stock {
       width: 100%;
@@ -1032,11 +1065,11 @@
     }
     .img-gallery-firstaid {
       object-fit: cover;
-      object-position: center 65%;
+      object-position: center 48%;
     }
     .img-gallery-training {
       object-fit: cover;
-      object-position: center 72%;
+      object-position: center 75%;
     }
 
     /* ==========================================================================
@@ -1179,9 +1212,17 @@
       background-color: var(--color-navy-950);
       aspect-ratio: 4 / 3;
     }
-    .gallery-card img {
+    .gallery-card picture {
+      display: block;
       width: 100%;
       height: 100%;
+    }
+    .gallery-card picture img,
+    .gallery-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.35s ease, opacity 0.35s ease;
     }
     .gallery-card:hover img {
@@ -1696,10 +1737,10 @@
         object-position: 68% 30%;
       }
       .img-qhse-technical {
-        object-position: center 70%;
+        object-position: center 75%;
       }
       .img-qhse-firstaid {
-        object-position: center 65%;
+        object-position: center 48%;
       }
       .gallery-card {
         aspect-ratio: 16 / 10;
@@ -2287,8 +2328,8 @@
                     src="assets/images/technical-training.jpeg"
                     alt="Session d'encadrement technique et de formation QHSE"
                     class="img-qhse-technical"
-                    width="1280"
-                    height="960"
+                    width="1448"
+                    height="1086"
                     loading="lazy"
                     decoding="async"
                   >
