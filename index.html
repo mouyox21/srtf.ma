@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="assets/srtf-favicon.png">
-  <link rel="apple-touch-icon" href="assets/srtf-favicon.png">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="icon" type="image/png" href="assets/srtf-favicon.png?v=2.2">
+  <link rel="apple-touch-icon" href="assets/srtf-favicon.png?v=2.2">
   <meta name="theme-color" content="#00285C">
   <title>SRTF — Société Réalisations Travaux et Formations | Mohammédia, Maroc</title>
   <meta name="description" content="SRTF accompagne les entreprises industrielles au Maroc dans leurs travaux sur site, leur maintenance, leur démarche QHSE, la formation professionnelle de leurs équipes et la fourniture d'équipements. Basée à Mohammédia.">
@@ -18,13 +21,13 @@
   <meta property="og:title" content="SRTF — Société Réalisations Travaux et Formations">
   <meta property="og:description" content="Un interlocuteur unique pour vos travaux industriels, votre maintenance, votre démarche QHSE, la formation de vos équipes et la fourniture d'équipements au Maroc.">
   <meta property="og:url" content="https://www.srtf.ma/">
-  <meta property="og:image" content="https://www.srtf.ma/assets/srtf-logo-full.jpeg">
+  <meta property="og:image" content="https://www.srtf.ma/assets/srtf-logo-full.jpeg?v=2.2">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SRTF — Société Réalisations Travaux et Formations">
   <meta name="twitter:description" content="Travaux industriels, maintenance, démarche QHSE, formations et équipements — Mohammédia, Maroc.">
-  <meta name="twitter:image" content="https://www.srtf.ma/assets/srtf-logo-full.jpeg">
+  <meta name="twitter:image" content="https://www.srtf.ma/assets/srtf-logo-full.jpeg?v=2.2">
 
   <!-- Polices Google pré-connectées (autorisées par CSP) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,8 +41,8 @@
     "@type": "LocalBusiness",
     "name": "SRTF — Société Réalisations Travaux et Formations",
     "url": "https://www.srtf.ma/",
-    "logo": "https://www.srtf.ma/assets/srtf-logo-full.jpeg",
-    "image": "https://www.srtf.ma/assets/srtf-logo-full.jpeg",
+    "logo": "https://www.srtf.ma/assets/srtf-logo-full.jpeg?v=2.2",
+    "image": "https://www.srtf.ma/assets/srtf-logo-full.jpeg?v=2.2",
     "description": "SRTF accompagne les entreprises industrielles au Maroc dans leurs travaux sur site, leur maintenance, leur démarche QHSE, la formation de leurs équipes et la fourniture d'équipements professionnels.",
     "address": {
       "@type": "PostalAddress",
@@ -1625,6 +1628,25 @@
       border-radius: var(--radius-xs);
       display: inline-block;
     }
+    .btn-clear-cache {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--color-slate-400);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--radius-xs);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all var(--transition-fast);
+      font-family: inherit;
+    }
+    .btn-clear-cache:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--color-white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 20px;
@@ -1829,9 +1851,9 @@
     <div class="container nav-container">
       <a href="#home" class="brand-logo" aria-label="SRTF - Accueil">
         <picture>
-          <source srcset="assets/srtf-logo-header.webp" type="image/webp">
+          <source srcset="assets/srtf-logo-header.webp?v=2.2" type="image/webp">
           <img
-            src="assets/srtf-logo-header.jpeg"
+            src="assets/srtf-logo-header.jpeg?v=2.2"
             alt="Logo officiel SRTF - Société Réalisations Travaux et Formations"
             class="brand-logo-img"
             width="640"
@@ -1942,9 +1964,9 @@
         <div class="hero-visual-frame">
           <div class="hero-tag-badge">INTERVENTIONS SUR SITE</div>
           <picture>
-            <source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp">
+            <source srcset="assets/images/industrial-lifting-operation.webp?v=2.2" type="image/webp">
             <img
-              src="assets/images/industrial-lifting-operation.jpeg"
+              src="assets/images/industrial-lifting-operation.jpeg?v=2.2"
               alt="Opérateur SRTF guidant une opération de levage industriel sous pont roulant 50T"
               class="img-hero-lifting"
               width="759"
@@ -2016,9 +2038,9 @@
       <div class="container about-grid">
         <div class="about-photo-main">
           <picture>
-            <source srcset="assets/images/team-safety-briefing.webp" type="image/webp">
+            <source srcset="assets/images/team-safety-briefing.webp?v=2.2" type="image/webp">
             <img
-              src="assets/images/team-safety-briefing.jpeg"
+              src="assets/images/team-safety-briefing.jpeg?v=2.2"
               alt="Équipe technique réunie pour un briefing de sécurité avant intervention"
               class="img-about-team"
               width="1599"
@@ -2196,9 +2218,9 @@
           <div class="detail-media media-composite-grid">
             <div class="media-card span-2">
               <picture>
-                <source srcset="assets/images/equipment-installation.webp" type="image/webp">
+                <source srcset="assets/images/equipment-installation.webp?v=2.2" type="image/webp">
                 <img
-                  src="assets/images/equipment-installation.jpeg"
+                  src="assets/images/equipment-installation.jpeg?v=2.2"
                   alt="Installation et réglage d'équipement industriel sur site"
                   class="img-works-installation"
                   width="1082"
@@ -2210,9 +2232,9 @@
             </div>
             <div class="media-card square">
               <picture>
-                <source srcset="assets/images/industrial-technician.webp" type="image/webp">
+                <source srcset="assets/images/industrial-technician.webp?v=2.2" type="image/webp">
                 <img
-                  src="assets/images/industrial-technician.jpeg"
+                  src="assets/images/industrial-technician.jpeg?v=2.2"
                   alt="Technicien en cours d'intervention sur site industriel"
                   class="img-works-technician"
                   width="1024"
@@ -2224,9 +2246,9 @@
             </div>
             <div class="media-card square">
               <picture>
-                <source srcset="assets/images/industrial-machinery.webp" type="image/webp">
+                <source srcset="assets/images/industrial-machinery.webp?v=2.2" type="image/webp">
                 <img
-                  src="assets/images/industrial-machinery.jpeg"
+                  src="assets/images/industrial-machinery.jpeg?v=2.2"
                   alt="Parc machines et outillages d'atelier"
                   class="img-works-machinery"
                   width="864"
@@ -2273,9 +2295,9 @@
           <div class="detail-media media-composite-grid">
             <div class="media-card span-2">
               <picture>
-                <source srcset="assets/images/electrical-maintenance.webp" type="image/webp">
+                <source srcset="assets/images/electrical-maintenance.webp?v=2.2" type="image/webp">
                 <img
-                  src="assets/images/electrical-maintenance.jpeg"
+                  src="assets/images/electrical-maintenance.jpeg?v=2.2"
                   alt="Technicien réalisant la maintenance d'une armoire électrique industrielle"
                   class="img-maint-electrical"
                   width="1280"
@@ -2345,9 +2367,9 @@
             <div class="media-composite-grid">
               <div class="media-card span-2">
                 <picture>
-                  <source srcset="assets/images/technical-training.webp" type="image/webp">
+                  <source srcset="assets/images/technical-training.webp?v=2.2" type="image/webp">
                   <img
-                    src="assets/images/technical-training.jpeg"
+                    src="assets/images/technical-training.jpeg?v=2.2"
                     alt="Session de formation professionnelle SRTF aux outillages électroportatifs et sécurité sur chantier"
                     class="img-qhse-technical"
                     width="1024"
@@ -2359,9 +2381,9 @@
               </div>
               <div class="media-card span-2">
                 <picture>
-                  <source srcset="assets/images/first-aid-training.webp" type="image/webp">
+                  <source srcset="assets/images/first-aid-training.webp?v=2.2" type="image/webp">
                   <img
-                    src="assets/images/first-aid-training.jpeg"
+                    src="assets/images/first-aid-training.jpeg?v=2.2"
                     alt="Exercice de formation aux gestes de secours et secourisme SST"
                     class="img-qhse-firstaid"
                     width="960"
@@ -2510,9 +2532,9 @@
 
         <div class="media-card" style="aspect-ratio: 4 / 3;">
           <picture>
-            <source srcset="assets/images/industrial-machinery.webp" type="image/webp">
+            <source srcset="assets/images/industrial-machinery.webp?v=2.2" type="image/webp">
             <img
-              src="assets/images/industrial-machinery.jpeg"
+              src="assets/images/industrial-machinery.jpeg?v=2.2"
               alt="Parc machines et approvisionnement en équipements industriels"
               class="img-equipment-stock"
               width="864"
@@ -2541,9 +2563,9 @@
         <div class="gallery-grid">
           <div class="gallery-card">
             <picture>
-              <source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp">
+              <source srcset="assets/images/industrial-lifting-operation.webp?v=2.2" type="image/webp">
               <img
-                src="assets/images/industrial-lifting-operation.jpeg"
+                src="assets/images/industrial-lifting-operation.jpeg?v=2.2"
                 alt="Opérateur SRTF et manœuvre de levage lourd sous pont 50T"
                 class="img-gallery-lifting"
                 width="759"
@@ -2560,9 +2582,9 @@
 
           <div class="gallery-card">
             <picture>
-              <source srcset="assets/images/electrical-maintenance.webp" type="image/webp">
+              <source srcset="assets/images/electrical-maintenance.webp?v=2.2" type="image/webp">
               <img
-                src="assets/images/electrical-maintenance.jpeg"
+                src="assets/images/electrical-maintenance.jpeg?v=2.2"
                 alt="Diagnostic et maintenance d'installations électriques"
                 class="img-gallery-electrical"
                 width="1280"
@@ -2579,9 +2601,9 @@
 
           <div class="gallery-card">
             <picture>
-              <source srcset="assets/images/equipment-installation.webp" type="image/webp">
+              <source srcset="assets/images/equipment-installation.webp?v=2.2" type="image/webp">
               <img
-                src="assets/images/equipment-installation.jpeg"
+                src="assets/images/equipment-installation.jpeg?v=2.2"
                 alt="Mise en place et alignement d'éléments mécaniques"
                 class="img-gallery-installation"
                 width="1082"
@@ -2598,9 +2620,9 @@
 
           <div class="gallery-card">
             <picture>
-              <source srcset="assets/images/team-safety-briefing.webp" type="image/webp">
+              <source srcset="assets/images/team-safety-briefing.webp?v=2.2" type="image/webp">
               <img
-                src="assets/images/team-safety-briefing.jpeg"
+                src="assets/images/team-safety-briefing.jpeg?v=2.2"
                 alt="Causerie de sécurité avant prise de poste"
                 class="img-gallery-briefing"
                 width="1599"
@@ -2617,9 +2639,9 @@
 
           <div class="gallery-card">
             <picture>
-              <source srcset="assets/images/first-aid-training.webp" type="image/webp">
+              <source srcset="assets/images/first-aid-training.webp?v=2.2" type="image/webp">
               <img
-                src="assets/images/first-aid-training.jpeg"
+                src="assets/images/first-aid-training.jpeg?v=2.2"
                 alt="Entraînement pratique aux gestes de secours SST"
                 class="img-gallery-firstaid"
                 width="960"
@@ -2636,9 +2658,9 @@
 
           <div class="gallery-card">
             <picture>
-              <source srcset="assets/images/technical-training.webp" type="image/webp">
+              <source srcset="assets/images/technical-training.webp?v=2.2" type="image/webp">
               <img
-                src="assets/images/technical-training.jpeg"
+                src="assets/images/technical-training.jpeg?v=2.2"
                 alt="Formation professionnelle SRTF en salle aux outillages électroportatifs"
                 class="img-gallery-training"
                 width="1024"
@@ -2953,9 +2975,9 @@
       <div class="footer-grid">
         <div class="footer-col">
           <picture>
-            <source srcset="assets/srtf-logo-header.webp" type="image/webp">
+            <source srcset="assets/srtf-logo-header.webp?v=2.2" type="image/webp">
             <img
-              src="assets/srtf-logo-header.jpeg"
+              src="assets/srtf-logo-header.jpeg?v=2.2"
               alt="Logo SRTF"
               class="footer-brand-logo"
               width="640"
@@ -3011,8 +3033,12 @@
         <div>
           &copy; <span id="year"></span> SRTF — Société Réalisations Travaux et Formations. Tous droits réservés.
         </div>
-        <div>
-          ICE 003998430000092 &middot; Mohammédia &middot; Maroc
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+          <span>ICE 003998430000092 &middot; Mohammédia &middot; Maroc</span>
+          <button type="button" class="btn-clear-cache" onclick="window.clearSiteCache()" title="Vérifier et charger la dernière version du site">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <span>Actualiser le site</span>
+          </button>
         </div>
       </div>
     </div>
@@ -3205,6 +3231,39 @@
           }
         });
       }
+      // ======================================================================
+      // GESTION DU CACHE & ACTUALISATION DU SITE
+      // ======================================================================
+      var CURRENT_BUILD = '2026.09.22-v2.2';
+      try {
+        var lastBuild = localStorage.getItem('srtf_build_ver');
+        if (lastBuild && lastBuild !== CURRENT_BUILD) {
+          localStorage.setItem('srtf_build_ver', CURRENT_BUILD);
+          if ('caches' in window) {
+            caches.keys().then(function(keys) {
+              keys.forEach(function(k) { caches.delete(k); });
+            });
+          }
+        } else if (!lastBuild) {
+          localStorage.setItem('srtf_build_ver', CURRENT_BUILD);
+        }
+      } catch (_) {}
+
+      window.clearSiteCache = async function() {
+        try {
+          if ('caches' in window) {
+            var keys = await caches.keys();
+            await Promise.all(keys.map(function(k) { return caches.delete(k); }));
+          }
+          localStorage.clear();
+          sessionStorage.clear();
+        } catch (_) {}
+        showToast('Mise à jour en cours… Rechargement de la dernière version.');
+        setTimeout(function() {
+          var cleanUrl = window.location.origin + window.location.pathname + '?v=' + Date.now() + window.location.hash;
+          window.location.replace(cleanUrl);
+        }, 400);
+      };
     })();
   </script>
 </body>
