@@ -1009,7 +1009,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 40%;
+      object-position: center 20%; /* Met en valeur le crochet 50T et l'opérateur au gilet SRTF */
     }
     .img-about-team {
       width: 100%;
@@ -1035,7 +1035,7 @@
     }
     .img-qhse-technical {
       object-fit: cover;
-      object-position: center 75%; /* Élimine le plafond vide, cadre formateur, écran SRTF & stagiaires */
+      object-position: center 95%; /* Cadre l'écran SRTF, le formateur et les stagiaires */
     }
     .img-qhse-firstaid {
       object-fit: cover;
@@ -1051,7 +1051,7 @@
     /* Cadrages individuels de la Galerie Réalisations */
     .img-gallery-lifting {
       object-fit: cover;
-      object-position: center 38%;
+      object-position: center 20%; /* Cadre le crochet 50T et le gilet logoté SRTF */
     }
     .img-gallery-electrical {
       object-fit: cover;
@@ -1071,7 +1071,7 @@
     }
     .img-gallery-training {
       object-fit: cover;
-      object-position: center 75%;
+      object-position: center center; /* Ratio natif 4:3 parfait */
     }
 
     /* ==========================================================================
@@ -1727,7 +1727,7 @@
         aspect-ratio: 16 / 10;
       }
       .img-hero-lifting {
-        object-position: center 36%;
+        object-position: center 22%;
       }
       .about-photo-main {
         aspect-ratio: 16 / 10;
@@ -1739,7 +1739,7 @@
         object-position: 68% 30%;
       }
       .img-qhse-technical {
-        object-position: center 75%;
+        object-position: center 95%;
       }
       .img-qhse-firstaid {
         object-position: center 48%;
@@ -1945,10 +1945,10 @@
             <source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp">
             <img
               src="assets/images/industrial-lifting-operation.jpeg"
-              alt="Opération de levage et d'installation sur site industriel"
+              alt="Opérateur SRTF guidant une opération de levage industriel sous pont roulant 50T"
               class="img-hero-lifting"
-              width="950"
-              height="1280"
+              width="759"
+              height="1024"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -2348,10 +2348,10 @@
                   <source srcset="assets/images/technical-training.webp" type="image/webp">
                   <img
                     src="assets/images/technical-training.jpeg"
-                    alt="Session d'encadrement technique et de formation QHSE"
+                    alt="Session de formation professionnelle SRTF aux outillages électroportatifs et sécurité sur chantier"
                     class="img-qhse-technical"
-                    width="1448"
-                    height="1086"
+                    width="1024"
+                    height="768"
                     loading="lazy"
                     decoding="async"
                   >
@@ -2544,10 +2544,10 @@
               <source srcset="assets/images/industrial-lifting-operation.webp" type="image/webp">
               <img
                 src="assets/images/industrial-lifting-operation.jpeg"
-                alt="Levage et manutention sur site industriel"
+                alt="Opérateur SRTF et manœuvre de levage lourd sous pont 50T"
                 class="img-gallery-lifting"
-                width="950"
-                height="1280"
+                width="759"
+                height="1024"
                 loading="lazy"
                 decoding="async"
               >
@@ -2639,10 +2639,10 @@
               <source srcset="assets/images/technical-training.webp" type="image/webp">
               <img
                 src="assets/images/technical-training.jpeg"
-                alt="Encadrement et formation technique spécialisée"
+                alt="Formation professionnelle SRTF en salle aux outillages électroportatifs"
                 class="img-gallery-training"
-                width="1280"
-                height="960"
+                width="1024"
+                height="768"
                 loading="lazy"
                 decoding="async"
               >
